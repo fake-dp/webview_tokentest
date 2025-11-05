@@ -64,12 +64,6 @@ export default function App() {
     addLog("REGISTER_TOKEN sent");
   };
 
-  const openExternal = () => {
-    window.ReactNativeWebView?.postMessage(
-      JSON.stringify({ type: "OPEN_URL", url: "https://google.com" })
-    );
-    addLog("OPEN_URL sent");
-  };
 
   return (
     <div style={{ padding: 20, fontFamily: "system-ui" }}>
@@ -83,7 +77,7 @@ export default function App() {
         <button onClick={registerToken} disabled={!token}>
           서버등록
         </button>
-        <button onClick={openExternal}>외부 URL 열기</button>
+
       </div>
 
       <h3>Logs</h3>
@@ -91,7 +85,7 @@ export default function App() {
 
       <hr />
       <p style={{ color: "#666" }}>
-        앱이 주입할 수 있는 전역 <code>window.__EXPO_PUSH_TOKEN__</code> :
+        전역으로 토큰 관리하기 <code>window.__EXPO_PUSH_TOKEN__</code> :
         <code> {window.__EXPO_PUSH_TOKEN__ || "(undefined)"} </code>
       </p>
     </div>
