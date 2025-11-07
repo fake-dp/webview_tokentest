@@ -24,7 +24,6 @@ export default function PushButton() {
       alert(result.ok ? "✅ 푸시 전송 성공!" : `❌ 실패: ${result.error}`);
     } catch (e) {
       console.log(e);
-      alert("에러 발생: 콘솔을 확인하세요.");
     } finally {
       setLoading(false);
     }
